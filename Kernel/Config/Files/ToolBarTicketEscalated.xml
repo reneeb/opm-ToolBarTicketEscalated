@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<otrs_config version="1.0" init="Config">
+    <CVS>$Id: ToolBarTicketEscalated.xml,v 1.55 2011/08/24 08:42:06 ud Exp $</CVS>
+    <ConfigItem Name="ToolBarTicketEscalated::TicketOwner" Required="1" Valid="1">
+        <Description Translatable="1">Count either my escalated tickets or the escalated tickets of all agents.</Description>
+        <Group>ToolBarTicketEscalated</Group>
+        <SubGroup>Core</SubGroup>
+        <Setting>
+            <Option SelectedID="me">
+                <Item Key="all">all tickets</Item>
+                <Item Key="me">my tickets</Item>
+            </Option>
+        </Setting>
+    </ConfigItem>
+</otrs_config>

@@ -42,13 +42,20 @@ sub Run {
         }
     }
 
+    my %ExtraOptions;
+
+    my $Owners = $Self->{ConfigObject}->Get( 'ToolBarTicketEscalated::TicketOwner' ) || 'me';
+    if ( $Owners eq 'me' ) {
+        $ExtraOptions{OwnerIDs} = [ $Self->{UserID} ];
+    }
+
     # get user lock data
     my $Count = $Self->{TicketObject}->TicketSearch(
         Result                           => 'COUNT',
         TicketEscalationTimeOlderMinutes => 0,
-        OwnerIDs                         => [ $Self->{UserID} ],
         UserID                           => 1,
         Permission                       => 'ro',
+        %ExtraOptions,
     );
 
     my $Class    = $Param{Config}->{CssClass};
