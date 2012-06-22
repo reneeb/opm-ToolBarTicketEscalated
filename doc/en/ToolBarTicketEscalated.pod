@@ -1,0 +1,54 @@
+=head1 NAME
+
+ToolBarTicketEscalated - show escalation icon and number of escalated tickets in the toolbar
+
+=head1 DESCRIPTION
+
+In standard OTRS a icon for the escalation view is shown (when configured). This icon is shown
+even when no ticket is escalated. And when tickets are escalated the number of escalated
+tickets is not shown.
+
+This add-on adds a new module to show that icon with a different behaviour:
+
+The icon is shown only when tickets are escalated (like the icons for your locked tickets) and
+the number of escalated tickets is shown.
+
+=head1 CONFIGURATION
+
+=head2 Activation
+
+You have to enable this module via SysConfig. In
+
+  Ticket -> Frontend::Agent::ToolBarModule
+
+you can find
+
+  Frontend::ToolBarModule###xx-Ticket::AgentTicketEscalation
+
+(where xx is a number).
+
+Activate this option and replace 
+
+  Kernel::Output::HTML::ToolBarLink
+
+with
+
+  Kernel::Output::HTML::ToolBarTicketEscalated
+.
+
+=head2 What tickets are count
+
+You can choose if the all escalated tickets are count (regardless who is the owner) or if the
+escalated tickets are count whose owner the logged-in user is (like the "locked tickets" icon).
+
+This configuration option can be found in the SysConfig at
+
+  ToolBarTicketEscalated -> Core
+
+=head1 ACKNOWLEGEMENT
+
+Thanks to Nureg (http://nureg.de) who sponsored this add-on!
+
+=head1 AUTHOR AND LICENSE
+
+
