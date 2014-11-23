@@ -49,6 +49,12 @@ This configuration option can be found in the SysConfig at
 
 Thanks to Nureg (http://nureg.de) who sponsored this add-on!
 
+=head1 REPOSITORY & BUGTRACKER
+
+This code and a bugtracker is available at L<http://github.com/reneeb/otrs-ToolBarTicketEscalated>.
+
 =head1 AUTHOR AND LICENSE
 
+ This addon is licensed under the AGPL 3.0
 
+Renee Baecker, C<< <info@feature-addons.de> >>
