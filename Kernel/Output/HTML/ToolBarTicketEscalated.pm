@@ -1,8 +1,6 @@
 # --
 # Kernel/Output/HTML/ToolBarTicketEscalated.pm
-# Copyright (C) 2012 Perl-Services.de, http://perl-services.de/
-# --
-# $Id: ToolBarTicketEscalated.pm,v 1.7 2011/01/21 18:01:40 dz Exp $
+# Copyright (C) 2012 - 2014 Perl-Services.de, http://perl-services.de/
 # --
 # This software comes with ABSOLUTELY NO WARRANTY. For details, see
 # the enclosed file COPYING for license information (AGPL). If you
@@ -14,8 +12,7 @@ package Kernel::Output::HTML::ToolBarTicketEscalated;
 use strict;
 use warnings;
 
-use vars qw($VERSION);
-$VERSION = qw($Revision: 1.7 $) [1];
+our $VERSION = 0.01;
 
 sub new {
     my ( $Type, %Param ) = @_;
@@ -24,33 +21,37 @@ sub new {
     my $Self = {};
     bless( $Self, $Type );
 
-    # get needed objects
-    for (qw(ConfigObject LogObject DBObject TicketObject LayoutObject UserID)) {
-        $Self->{$_} = $Param{$_} || die "Got no $_!";
-    }
     return $Self;
 }
 
 sub Run {
     my ( $Self, %Param ) = @_;
 
+    my $LogObject    = $Kernel::OM->Get('Kernel::System::Log');
+    my $TicketObject = $Kernel::OM->Get('Kernel::System::Ticket');
+    my $ConfigObject = $Kernel::OM->Get('Kernel::Config');
+    my $LayoutObject = $Kernel::OM->Get('Kernel::Output::HTML::Layout');
+
     # check needed stuff
-    for (qw(Config)) {
-        if ( !$Param{$_} ) {
-            $Self->{LogObject}->Log( Priority => 'error', Message => "Need $_!" );
+    for my $Needed (qw(Config)) {
+        if ( !$Param{$Needed} ) {
+            $LogObject->Log(
+                Priority => 'error',
+                Message  => "Need $Needed!",
+            );
             return;
         }
     }
 
     my %ExtraOptions;
 
-    my $Owners = $Self->{ConfigObject}->Get( 'ToolBarTicketEscalated::TicketOwner' ) || 'me';
+    my $Owners = $ConfigObject->Get( 'ToolBarTicketEscalated::TicketOwner' ) || 'me';
     if ( $Owners eq 'me' ) {
         $ExtraOptions{OwnerIDs} = [ $Self->{UserID} ];
     }
 
     # get user lock data
-    my $Count = $Self->{TicketObject}->TicketSearch(
+    my $Count = $TicketObject->TicketSearch(
         Result                           => 'COUNT',
         TicketEscalationTimeOlderMinutes => 0,
         UserID                           => 1,
@@ -59,8 +60,8 @@ sub Run {
     );
 
     my $Class    = $Param{Config}->{CssClass};
-    my $Text     = $Self->{LayoutObject}->{LanguageObject}->Get('Escalated Tickets Total');
-    my $URL      = $Self->{LayoutObject}->{Baselink};
+    my $Text     = $LayoutObject->{LanguageObject}->Translate('Escalated Tickets Total');
+    my $URL      = $LayoutObject->{Baselink};
     my $Priority = $Param{Config}->{Priority};
     
     my %Return;
