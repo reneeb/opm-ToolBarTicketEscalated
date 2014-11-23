@@ -21,6 +21,8 @@ sub new {
     my $Self = {};
     bless( $Self, $Type );
 
+    $Self->{UserID} = $Param{UserID};
+
     return $Self;
 }
 
@@ -67,12 +69,12 @@ sub Run {
     my %Return;
     if ($Count) {
         $Return{$Priority} = {
+            %{ $Param{Config} || {} },
             Block       => 'ToolBarItem',
             Count       => $Count,
             Description => $Text,
             Class       => $Class,
             Link        => $URL . 'Action=AgentTicketEscalationView',
-            AccessKey   => 'e',
         };
     }
 
