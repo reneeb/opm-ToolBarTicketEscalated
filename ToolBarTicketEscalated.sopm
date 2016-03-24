@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <otrs_package version="1.0">
-    <CVS>$Id: ToolBarTicketEscalated.sopm,v 1.1.1.1 2011/12/15 07:49:58 rb Exp $</CVS>
     <Name>ToolBarTicketEscalated</Name>
-    <Version>4.0.1</Version>
-    <Framework>4.0.x</Framework>
+    <Version>5.0.1</Version>
+    <Framework>5.0.x</Framework>
     <Vendor>Perl-Services.de</Vendor>
     <URL>http://www.perl-services.de/</URL>
     <License>GNU AFFERO GENERAL PUBLIC LICENSE Version 3, November 2007</License>
@@ -11,7 +10,7 @@
     <Description Lang="de">Ein besseres Modul zur Anzeige des "Eskalierte Tickets"-Icons in der Toolbar.</Description>
     <Filelist>
         <File Permission="644" Location="Kernel/Config/Files/ToolBarTicketEscalated.xml"/>
-        <File Permission="644" Location="Kernel/Output/HTML/ToolBarTicketEscalated.pm"/>
+        <File Permission="644" Location="Kernel/Output/HTML/ToolBar/TicketEscalated.pm"/>
         <File Permission="644" Location="doc/en/ToolBarTicketEscalated.pod"/>
     </Filelist>
 </otrs_package>

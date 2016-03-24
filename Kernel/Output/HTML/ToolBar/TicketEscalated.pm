@@ -1,18 +1,16 @@
 # --
 # Kernel/Output/HTML/ToolBarTicketEscalated.pm
-# Copyright (C) 2012 - 2014 Perl-Services.de, http://perl-services.de/
+# Copyright (C) 2012 - 2016 Perl-Services.de, http://perl-services.de/
 # --
 # This software comes with ABSOLUTELY NO WARRANTY. For details, see
 # the enclosed file COPYING for license information (AGPL). If you
 # did not receive this file, see http://www.gnu.org/licenses/agpl.txt.
 # --
 
-package Kernel::Output::HTML::ToolBarTicketEscalated;
+package Kernel::Output::HTML::ToolBar::TicketEscalated;
 
 use strict;
 use warnings;
-
-our $VERSION = 0.01;
 
 sub new {
     my ( $Type, %Param ) = @_;

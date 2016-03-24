@@ -29,11 +29,11 @@ you can find
 
 Activate this option and replace 
 
-  Kernel::Output::HTML::ToolBarLink
+  Kernel::Output::HTML::ToolBar::Link
 
 with
 
-  Kernel::Output::HTML::ToolBarTicketEscalated
+  Kernel::Output::HTML::ToolBar::TicketEscalated
 .
 
 =head2 What tickets are count
