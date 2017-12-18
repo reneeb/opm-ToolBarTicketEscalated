@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<otrs_config version="2.0" init="Config">
+    <Setting Name="ToolBarTicketEscalated::TicketOwner" Required="1" Valid="1">
+        <Description Translatable="1">Count either my escalated tickets or the escalated tickets of all agents.</Description>
+        <Navigation>Core</Navigation>
+        <Value>
+            <Item ValueType="Select" SelectedID="me">
+                <Item ValueType="Option" Value="all">all tickets</Item>
+                <Item ValueType="Option" Value="me">my tickets</Item>
+            </Item>
+        </Value>
+    </Setting>
+</otrs_config>
