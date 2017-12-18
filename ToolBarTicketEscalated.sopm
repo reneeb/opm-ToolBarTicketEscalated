@@ -9,7 +9,7 @@
     <Description Lang="en">A better module to show "escalated tickets" icon in toolbar.</Description>
     <Description Lang="de">Ein besseres Modul zur Anzeige des "Eskalierte Tickets"-Icons in der Toolbar.</Description>
     <Filelist>
-        <File Permission="644" Location="Kernel/Config/Files/ToolBarTicketEscalated.xml"/>
+        <File Permission="644" Location="Kernel/Config/Files/XML/ToolBarTicketEscalated.xml"/>
         <File Permission="644" Location="Kernel/Output/HTML/ToolBar/TicketEscalated.pm"/>
         <File Permission="644" Location="doc/en/ToolBarTicketEscalated.pod"/>
     </Filelist>
