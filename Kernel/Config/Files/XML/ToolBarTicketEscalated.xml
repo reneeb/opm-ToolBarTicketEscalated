@@ -10,4 +10,18 @@
             </Item>
         </Value>
     </Setting>
+    <Setting Name="Frontend::ToolBarModule###870-Ticket::Escalated" Required="0" Valid="1">
+        <Description Translatable="1">Agent interface notification module to see the number of tickets escalated.</Description>
+        <Navigation>Frontend::Agent::ToolBar</Navigation>
+        <Value>
+            <Hash>
+                <Item Key="Module">Kernel::Output::HTML::ToolBar::TicketEscalated</Item>
+                <Item Key="CssClass">Responsible</Item>
+                <Item Key="CssClassNew">Responsible New</Item>
+                <Item Key="CssClassReached">Responsible Reached</Item>
+                <Item Key="Icon">fa fa-exclamation</Item>
+                <Item Key="Priority">8030010</Item>
+            </Hash>
+        </Value>
+    </Setting>
 </otrs_config>
