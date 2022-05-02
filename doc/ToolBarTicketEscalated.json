@@ -1,0 +1,22 @@
+{
+    "name": "ToolBarTicketEscalated",
+    "version": "6.0.3",
+    "framework": [
+        "6.0.x",
+        "6.1.x",
+        "6.2.x",
+        "6.3.x"
+    ],
+    "vendor": {
+        "name":  "Perl-Services.de",
+        "url": "https://www.perl-services.de"
+    },
+    "license": "GNU AFFERO GENERAL PUBLIC LICENSE Version 3, November 2007",
+    "description" : {
+        "en": "A better module to show \"escalated tickets\" icon in toolbar.",
+        "de": "Ein besseres Modul zur Anzeige des \"Eskalierte Tickets\"-Icons in der Toolbar."
+    },
+    "exclude_files" : [
+        "doc/ToolBarTicketEscalated.json"
+    ]
+}
