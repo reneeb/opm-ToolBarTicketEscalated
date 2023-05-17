@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <otrs_package version="1.0">
-    <!-- GENERATED WITH OPM::Maker::Command::sopm (1.1.0) -->
+    <!-- GENERATED WITH OPM::Maker::Command::sopm (1.1.1) -->
     <Name>ToolBarTicketEscalated</Name>
     <Version>6.0.4</Version>
     <Framework>6.0.x</Framework>
@@ -8,6 +8,7 @@
     <Framework>6.2.x</Framework>
     <Framework>6.3.x</Framework>
     <Framework>6.4.x</Framework>
+    <Framework>6.5.x</Framework>
     <Vendor>Perl-Services.de</Vendor>
     <URL>https://www.perl-services.de</URL>
     <Description Lang="de">Ein besseres Modul zur Anzeige des "Eskalierte Tickets"-Icons in der Toolbar.</Description>
